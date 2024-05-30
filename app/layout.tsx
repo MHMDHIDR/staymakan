@@ -1,20 +1,22 @@
 import { Nunito } from 'next/font/google'
 
 import Navbar from '@/app/components/navbar/Navbar'
+import Footer from '@/app/components/Footer'
 import LoginModal from '@/app/components/modals/LoginModal'
 import RegisterModal from '@/app/components/modals/RegisterModal'
 import SearchModal from '@/app/components/modals/SearchModal'
 import RentModal from '@/app/components/modals/RentModal'
-
 import ToasterProvider from '@/app/providers/ToasterProvider'
-
-import './globals.css'
 import ClientOnly from './components/ClientOnly'
 import getCurrentUser from './actions/getCurrentUser'
+import { ThemeProvider } from './providers/ThemeProvider'
+import './globals.css'
+import { cn } from '@/lib/utils'
 
 export const metadata = {
   title: 'StayMakan',
-  description: 'StayMakan'
+  description:
+    'StayMakan is a platform that allows users to find and book homestays, holidays all over the places.'
 }
 
 const font = Nunito({
@@ -26,16 +28,29 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   return (
     <html lang='en'>
-      <body className={font.className}>
+      <head>
+        <link rel='icon' href='/images/logo-sm.svg' type='image/svg+xml' />
+        <meta name='theme-color' content='#ca8a03' />
+      </head>
+
+      <body
+        className={cn(
+          'min-h-screen bg-background font-sans antialiased bg-gray-100 dark:bg-gray-900 overflow-x-clip',
+          font.className
+        )}
+      >
         <ClientOnly>
-          <ToasterProvider />
-          <LoginModal />
-          <RegisterModal />
-          <SearchModal />
-          <RentModal />
-          <Navbar currentUser={currentUser} />
+          <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
+            <ToasterProvider />
+            <LoginModal />
+            <RegisterModal />
+            <SearchModal />
+            <RentModal />
+            <Navbar currentUser={currentUser} />
+            {children}
+            <Footer />
+          </ThemeProvider>
         </ClientOnly>
-        <div className='pb-20 pt-28'>{children}</div>
       </body>
     </html>
   )
