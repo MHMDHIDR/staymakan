@@ -5,10 +5,11 @@
   "private": true,
   "scripts": {
     "postinstall": "prisma generate",
-    "dev": "bunx prisma studio && next dev",
+    "dev": "next dev",
     "build": "bunx prisma generate && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "studio": "bunx prisma studio"
   },
   "dependencies": {
     "@next-auth/prisma-adapter": "^1.0.7",
