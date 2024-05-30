@@ -16,7 +16,20 @@ import { cn } from '@/lib/utils'
 export const metadata = {
   title: 'StayMakan',
   description:
-    'StayMakan is a platform that allows users to find and book homestays, holidays all over the places.'
+    'StayMakan is a platform that allows users to find and book homestays, holidays all over the places.',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://staymakan.mohammedhaydar.com',
+    images: [
+      {
+        url: 'https://staymakan.mohammedhaydar.com/images/logo.png',
+        width: 980,
+        height: 254,
+        alt: 'StayMakan | Find and book homestays, holidays all over the places.'
+      }
+    ]
+  }
 }
 
 const font = Nunito({
