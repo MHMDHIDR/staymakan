@@ -1,32 +1,42 @@
 'use client'
 
-import { Moon, Sun } from 'lucide-react'
+import { Monitor, Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { Button } from '@/components/ui/button'
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu'
 
 export default function ModeToggle() {
-  const { setTheme } = useTheme()
+  const { setTheme, theme } = useTheme()
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant='outline' size='icon'>
-          <Sun className='h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0' />
-          <Moon className='absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100' />
-          <span className='sr-only'>Toggle theme</span>
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align='end'>
-        <DropdownMenuItem onClick={() => setTheme('light')}>Light</DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme('dark')}>Dark</DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme('system')}>System</DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <div className='flex items-center rounded-full space-x-2 border p-1'>
+      <Button
+        onClick={() => setTheme('light')}
+        className={`${
+          theme === 'light' ? 'bg-primary/90' : 'bg-transparent'
+        } w-7 h-7 p-1 rounded-full`}
+      >
+        <Sun strokeWidth={1} size={18} color={theme === 'light' ? '#0c0909' : '#ddd'} />
+      </Button>
+      <Button
+        onClick={() => setTheme('dark')}
+        className={`${
+          theme === 'dark' ? 'bg-primary/90' : 'bg-transparent'
+        } w-7 h-7 p-1 rounded-full`}
+      >
+        <Monitor
+          strokeWidth={1}
+          size={18}
+          color={theme === 'light' ? '#0c0909' : '#ddd'}
+        />
+      </Button>
+      <Button
+        onClick={() => setTheme('system')}
+        className={`${
+          theme === 'system' ? 'bg-primary/90' : 'bg-transparent'
+        } w-7 h-7 p-1 rounded-full`}
+      >
+        <Moon strokeWidth={1} size={18} color={theme === 'light' ? '#0c0909' : '#ddd'} />
+      </Button>
+    </div>
   )
 }
