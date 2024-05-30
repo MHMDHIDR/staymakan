@@ -92,12 +92,11 @@ const LoginModal = () => {
       />
       <div className='mt-4 font-light text-center text-neutral-500'>
         <p>
-          First time using StayMakan?
+          First time using StayMakan?{' '}
           <span
             onClick={onToggle}
-            className='cursor-pointer text-neutral-800 hover:underline'
+            className='cursor-pointer text-neutral-800 hover:underline dark:text-neutral-200'
           >
-            {' '}
             Create an account
           </span>
         </p>

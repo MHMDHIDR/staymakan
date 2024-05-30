@@ -11,7 +11,6 @@ import ClientOnly from './components/ClientOnly'
 import getCurrentUser from './actions/getCurrentUser'
 import { ThemeProvider } from './providers/ThemeProvider'
 import './globals.css'
-import { cn } from '@/lib/utils'
 
 export const metadata = {
   title: 'StayMakan',
@@ -46,12 +45,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <meta name='theme-color' content='#ca8a03' />
       </head>
 
-      <body
-        className={cn(
-          'min-h-screen bg-background font-sans antialiased bg-gray-100 dark:bg-gray-900 overflow-x-clip',
-          font.className
-        )}
-      >
+      <body>
         <ClientOnly>
           <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
             <ToasterProvider />

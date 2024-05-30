@@ -50,6 +50,7 @@ const Input: React.FC<InputProps> = ({
           pt-6 
           font-light 
           bg-white 
+          dark:bg-neutral-800
           border-2
           rounded-md
           outline-none
