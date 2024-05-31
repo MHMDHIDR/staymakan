@@ -74,11 +74,7 @@ const ListingCard: React.FC<ListingCardProps> = ({
       className='cursor-pointer col-span-1 group'
     >
       <div className='flex flex-col w-full gap-2'>
-        <div
-          className='relative w-full overflow-hidden 
-  aspect-square rounded-xl
-'
-        >
+        <div className='relative w-full overflow-hidden aspect-square rounded-xl'>
           <Image
             fill
             className='object-cover w-full h-full group-hover:scale-110 transition'
@@ -87,13 +83,7 @@ const ListingCard: React.FC<ListingCardProps> = ({
             alt='Listing'
             sizes='(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw'
           />
-          <div
-            className='
-  absolute
- top-3
- right-3
-'
-          >
+          <div className='absolute top-3 right-3'>
             <HeartButton listingId={data.id} currentUser={currentUser} />
           </div>
         </div>
