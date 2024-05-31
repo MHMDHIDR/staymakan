@@ -42,7 +42,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang='en'>
       <head>
         <link rel='icon' href='/images/logo-sm.svg' type='image/svg+xml' />
-        <meta name='theme-color' content='#ca8a03' />
+        <meta name='theme-color' content='#BA8C2B' />
       </head>
 
       <body>
