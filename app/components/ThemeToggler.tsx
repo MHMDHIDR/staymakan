@@ -13,7 +13,7 @@ export default function ModeToggle() {
       : '#000'
 
   return (
-    <div className='flex items-center rounded-full space-x-2 border p-1'>
+    <div className='flex items-center rounded-full space-x-2 border p-1 max-w-fit mx-auto md:mx-0'>
       <Button
         onClick={() => setTheme('light')}
         className={`${
