@@ -21,7 +21,7 @@ const CountrySelect: React.FC<CountrySelectProps> = ({ value, onChange }) => {
 
   return (
     <Select
-      className='z-50'
+      className='z-[99999]'
       placeholder='Anywhere'
       isClearable
       options={getAll()}
@@ -31,9 +31,8 @@ const CountrySelect: React.FC<CountrySelectProps> = ({ value, onChange }) => {
         <div className='flex flex-row items-center gap-3'>
           <div>{option.flag}</div>
           <div>
-            {option.label},
-            <span className='ml-1 text-neutral-500 dark:text-neutral-800'>
-              {option.region}
+            <span className='ml-1 text-neutral-500 [dark:black!important]'>
+              {option.label},{option.region}
             </span>
           </div>
         </div>
