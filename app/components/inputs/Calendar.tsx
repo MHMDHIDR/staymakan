@@ -16,9 +16,6 @@ const DatePicker: React.FC<DatePickerProps> = ({ value, onChange, disabledDates 
     <DateRange
       rangeColors={['#BA8C2B']}
       className='[display:block!important] max-w-sm mx-auto rounded-md dark:bg-neutral-950'
-      classNames={{
-        daySelected: 'bg-red-500'
-      }}
       ranges={[value]}
       date={new Date()}
       onChange={onChange}

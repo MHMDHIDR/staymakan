@@ -8,7 +8,8 @@ export default function ModeToggle() {
   const { setTheme, theme } = useTheme()
   // if system theme is enabled, we need to check if the user's system theme is dark or light, if it's dark then the color is '#ddd' else it's '#000'
   let IconColor =
-    theme === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches
+    theme === 'dark' ||
+    (window.matchMedia('(prefers-color-scheme: dark)').matches && theme === 'system')
       ? '#ddd'
       : '#000'
 
