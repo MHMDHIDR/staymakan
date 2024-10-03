@@ -4,11 +4,12 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --experimental-https",
+    "dev": "next dev",
     "start": "next start",
     "lint": "next lint",
     "build": "bunx prisma generate && next build",
-    "postinstall": "bunx prisma generate",
+    "generate": "bunx prisma generate",
+    "push": "bunx prisma db push",
     "studio": "bunx prisma studio"
   },
   "dependencies": {
