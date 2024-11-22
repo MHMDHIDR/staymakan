@@ -1,15 +1,13 @@
 'use client'
 
-import { toast } from 'react-hot-toast'
 import axios from 'axios'
-import { useCallback, useState } from 'react'
 import { useRouter } from 'next/navigation'
-
-import { SafeReservation, SafeUser } from '@/app/types'
-
-import Heading from '@/app/components/Heading'
+import { useCallback, useState } from 'react'
+import { toast } from 'react-hot-toast'
 import Container from '@/app/components/Container'
+import Heading from '@/app/components/Heading'
 import ListingCard from '@/app/components/listings/ListingCard'
+import { SafeReservation, SafeUser } from '@/app/types'
 
 interface TripsClientProps {
   reservations: SafeReservation[]
@@ -43,15 +41,7 @@ const TripsClient: React.FC<TripsClientProps> = ({ reservations, currentUser }) 
   return (
     <Container>
       <Heading title='Trips' subtitle="Where you've been and where you're going" />
-      <div
-        className='
-  mt-10
- grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4
- xl:grid-cols-5
- 2xl:grid-cols-6
- gap-8
-'
-      >
+      <div className='mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6'>
         {reservations.map((reservation: any) => (
           <ListingCard
             key={reservation.id}

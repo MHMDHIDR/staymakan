@@ -1,7 +1,7 @@
 // app/actions/getCurrentUser.ts
 import { getServerSession } from 'next-auth'
-import prisma from '@/app/libs/prismadb'
 import { authOptions } from '@/app/api/auth/[...nextauth]/nextauthOptions'
+import prisma from '@/app/libs/prismadb'
 import { SafeUser } from '@/app/types'
 
 export async function getSession() {
@@ -30,9 +30,7 @@ export default async function getCurrentUser(): Promise<SafeUser | null> {
     name: currentUser.name,
     email: currentUser.email,
     hashedPassword: currentUser.hashedPassword,
-    emailVerified: currentUser.emailVerified
-      ? currentUser.emailVerified.toISOString()
-      : null,
+    emailVerified: currentUser.emailVerified ? currentUser.emailVerified.toISOString() : null,
     image: currentUser.image,
     createdAt: currentUser.createdAt.toISOString(),
     updatedAt: currentUser.updatedAt.toISOString(),

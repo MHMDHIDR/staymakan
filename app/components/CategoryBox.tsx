@@ -1,7 +1,7 @@
 'use client'
 
-import qs from 'query-string'
 import { useRouter, useSearchParams } from 'next/navigation'
+import qs from 'query-string'
 import { useCallback } from 'react'
 import { IconType } from 'react-icons'
 
@@ -45,25 +45,7 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({ icon: Icon, label, selected }
   return (
     <div
       onClick={handleClick}
-      className={`
-        flex 
-        flex-col 
-        items-center 
-        justify-center 
-        gap-2
-        p-3
-        border-b-2
-        hover:text-neutral-800
-        dark:hover:text-neutral-200
-        transition
-        cursor-pointer
-        ${
-          selected
-            ? `border-b-neutral-800dark:border-b-neutral-200`
-            : 'border-transparent'
-        }
-        ${selected ? `text-neutral-800dark:text-neutral-200` : 'text-neutral-500'}
-      `}
+      className={`flex cursor-pointer flex-col items-center justify-center gap-2 border-b-2 p-3 transition hover:text-neutral-800 dark:hover:text-neutral-200 ${selected ? `border-b-neutral-800dark:border-b-neutral-200` : 'border-transparent'} ${selected ? `text-neutral-800dark:text-neutral-200` : 'text-neutral-500'} `}
     >
       <Icon size={26} />
       <div className='text-sm font-medium'>{label}</div>

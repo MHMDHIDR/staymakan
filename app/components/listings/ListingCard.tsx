@@ -1,16 +1,14 @@
 'use client'
 
+import { format } from 'date-fns'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { useCallback, useMemo } from 'react'
-import { format } from 'date-fns'
-
 import useCountries from '@/app/hooks/useCountries'
 import { SafeListing, SafeReservation, SafeUser } from '@/app/types'
-
-import HeartButton from '../HeartButton'
 import Button from '../Button'
 import ClientOnly from '../ClientOnly'
+import HeartButton from '../HeartButton'
 
 interface ListingCardProps {
   data: SafeListing
@@ -71,28 +69,26 @@ const ListingCard: React.FC<ListingCardProps> = ({
   return (
     <div
       onClick={() => router.push(`/listings/${data.id}`)}
-      className='cursor-pointer col-span-1 group'
+      className='group col-span-1 cursor-pointer'
     >
-      <div className='flex flex-col w-full gap-2'>
-        <div className='relative w-full overflow-hidden aspect-square rounded-xl'>
+      <div className='flex w-full flex-col gap-2'>
+        <div className='relative aspect-square w-full overflow-hidden rounded-xl'>
           <Image
             fill
-            className='object-cover w-full h-full group-hover:scale-110 transition'
+            className='h-full w-full object-cover transition group-hover:scale-110'
             src={data.imageSrc}
             priority={true}
             alt='Listing'
             sizes='(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw'
           />
-          <div className='absolute top-3 right-3'>
+          <div className='absolute right-3 top-3'>
             <HeartButton listingId={data.id} currentUser={currentUser} />
           </div>
         </div>
         <div className='text-lg font-semibold'>
           {location?.region}, {location?.label}
         </div>
-        <div className='font-light text-neutral-500'>
-          {reservationDate || data.category}
-        </div>
+        <div className='font-light text-neutral-500'>{reservationDate || data.category}</div>
         <div className='flex flex-row items-center gap-1'>
           <div className='font-semibold'>$ {price}</div>
           {!reservation && <div className='font-light'>night</div>}

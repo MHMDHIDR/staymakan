@@ -13,29 +13,23 @@ export default function ModeToggle() {
       : '#000'
 
   return (
-    <div className='flex items-center rounded-full space-x-2 border p-1 max-w-fit mx-auto md:mx-0'>
+    <div className='mx-auto flex max-w-fit items-center space-x-2 rounded-full border p-1 md:mx-0'>
       <button
         onClick={() => setTheme('light')}
-        className={`${
-          theme === 'light' ? 'bg-primary/90' : 'bg-transparent'
-        } w-7 h-7 p-1 rounded-full`}
+        className={`${theme === 'light' ? 'bg-primary/90' : 'bg-transparent'} h-7 w-7 rounded-full p-1`}
       >
         <Sun strokeWidth={1} size={18} color={IconColor} />
       </button>
       <button
         onClick={() => setTheme('system')}
-        className={`${
-          theme === 'system' ? 'bg-primary/90' : 'bg-transparent'
-        } w-7 h-7 p-1 rounded-full`}
+        className={`${theme === 'system' ? 'bg-primary/90' : 'bg-transparent'} h-7 w-7 rounded-full p-1`}
       >
         <Monitor strokeWidth={1} size={18} color={IconColor} />
       </button>
 
       <button
         onClick={() => setTheme('dark')}
-        className={`${
-          theme === 'dark' ? 'bg-primary/90' : 'bg-transparent'
-        } w-7 h-7 p-1 rounded-full`}
+        className={`${theme === 'dark' ? 'bg-primary/90' : 'bg-transparent'} h-7 w-7 rounded-full p-1`}
       >
         <Moon strokeWidth={1} size={18} color={IconColor} />
       </button>

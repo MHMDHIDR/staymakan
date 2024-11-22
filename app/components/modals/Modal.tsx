@@ -74,17 +74,15 @@ const Modal: React.FC<ModalProps> = ({
   }
 
   return (
-    <div className='fixed inset-0 z-[10000] flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none bg-neutral-800/70'>
-      <div className='relative h-full mx-auto w-full md:w-4/6 lg:w-3/6 xl:w-2/5 my-6 lg:h-auto md:h-auto'>
+    <div className='fixed inset-0 z-[10000] flex items-center justify-center overflow-y-auto overflow-x-hidden bg-neutral-800/70 outline-none focus:outline-none'>
+      <div className='relative mx-auto my-6 h-full w-full md:h-auto md:w-4/6 lg:h-auto lg:w-3/6 xl:w-2/5'>
         <div
-          className={` translate duration-300 h-full ${
-            showModal ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
-          }`}
+          className={`translate h-full duration-300 ${showModal ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}
         >
-          <div className='relative flex flex-col w-full bg-white dark:bg-neutral-900 border-0 rounded-lg shadow-lg outline-none translate h-full lg:h-auto md:h-auto focus:outline-none'>
-            <div className=' flex items-center p-6 rounded-t justify-center relative border-b-[1px]'>
+          <div className='translate relative flex h-full w-full flex-col rounded-lg border-0 bg-white shadow-lg outline-none focus:outline-none dark:bg-neutral-900 md:h-auto lg:h-auto'>
+            <div className='relative flex items-center justify-center rounded-t border-b-[1px] p-6'>
               <button
-                className='border-0  p-1 hover:opacity-70 transition absolute left-9'
+                className='absolute left-9 border-0 p-1 transition hover:opacity-70'
                 onClick={handleClose}
               >
                 <IoMdClose size={18} />
@@ -94,8 +92,8 @@ const Modal: React.FC<ModalProps> = ({
             {/*body*/}
             <div className='relative flex-auto p-6'>{body}</div>
             {/*footer*/}
-            <div className='flex flex-col p-6 gap-2'>
-              <div className='flex flex-row items-center gap-4 w-full'>
+            <div className='flex flex-col gap-2 p-6'>
+              <div className='flex w-full flex-row items-center gap-4'>
                 {secondaryAction && secondaryActionLabel && (
                   <Button
                     disabled={disabled}

@@ -1,10 +1,8 @@
 'use client'
 
 import Image from 'next/image'
-
 import useCountries from '@/app/hooks/useCountries'
 import { SafeUser } from '@/app/types'
-
 import Heading from '../Heading'
 import HeartButton from '../HeartButton'
 
@@ -30,29 +28,15 @@ const ListingHead: React.FC<ListingHeadProps> = ({
   return (
     <>
       <Heading title={title} subtitle={`${location?.region}, ${location?.label}`} />
-      <div
-        className='
-          w-full
-          h-[60vh]
-          overflow-hidden 
-          rounded-xl
-          relative
-        '
-      >
+      <div className='relative h-[60vh] w-full overflow-hidden rounded-xl'>
         <Image
           src={imageSrc}
           fill
-          className='object-cover w-full'
+          className='w-full object-cover'
           alt='Image'
           sizes='(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw'
         />
-        <div
-          className='
-  absolute
- top-5
- right-5
-'
-        >
+        <div className='absolute right-5 top-5'>
           <HeartButton listingId={id} currentUser={currentUser} />
         </div>
       </div>

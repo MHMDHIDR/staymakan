@@ -3,9 +3,9 @@ import Link from 'next/link'
 
 const Logo = () => {
   return (
-    <Link href='/' className='flex gap-x-3 items-center'>
+    <Link href='/' className='flex items-center gap-x-3'>
       <Image
-        className='hidden cursor-pointer md:block w-10 h-auto'
+        className='hidden h-auto w-10 cursor-pointer md:block'
         src='/images/logo-sm.png'
         width={0}
         height={0}

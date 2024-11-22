@@ -4,9 +4,11 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --experimental-https",
     "start": "next start",
     "lint": "next lint",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "build": "bunx prisma generate && next build",
     "generate": "bunx prisma generate",
     "push": "bunx prisma db push",
@@ -46,14 +48,18 @@
     "zustand": "^4.5.2"
   },
   "devDependencies": {
-    "@types/node": "^20.12.12",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
+    "@ianvs/prettier-plugin-sort-imports": "^4.3.1",
     "@types/bcrypt": "^5.0.2",
     "@types/leaflet": "^1.9.12",
+    "@types/node": "^20.12.12",
+    "@types/react": "^18.3.3",
     "@types/react-date-range": "^1.4.9",
+    "@types/react-dom": "^18.3.0",
     "autoprefixer": "^10.4.19",
+    "eslint-config-prettier": "^9.1.0",
     "postcss": "^8.4.38",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.9",
     "prisma": "^5.14.0",
     "tailwindcss": "^3.4.3"
   }

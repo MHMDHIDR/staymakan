@@ -1,11 +1,11 @@
 'use client'
 
+import { differenceInDays } from 'date-fns'
 import { useSearchParams } from 'next/navigation'
 import { useMemo } from 'react'
 import { BiSearch } from 'react-icons/bi'
-import { differenceInDays } from 'date-fns'
-import useSearchModal from '@/app/hooks/useSearchModal'
 import useCountries from '@/app/hooks/useCountries'
+import useSearchModal from '@/app/hooks/useSearchModal'
 
 const Search = () => {
   const searchModal = useSearchModal()
@@ -52,16 +52,16 @@ const Search = () => {
   return (
     <div
       onClick={searchModal.onOpen}
-      className='border-[1px] w-full md:w-auto py-2 rounded-full shadow-sm hover:shadow-md transition cursor-pointer'
+      className='w-full cursor-pointer rounded-full border-[1px] py-2 shadow-sm transition hover:shadow-md md:w-auto'
     >
       <div className='flex flex-row items-center justify-between'>
-        <div className='text-sm font-semibold px-6'>{locationLabel}</div>
-        <div className='hidden sm:block text-sm font-semibold px-6 border-x-[1px] flex-1 text-center'>
+        <div className='px-6 text-sm font-semibold'>{locationLabel}</div>
+        <div className='hidden flex-1 border-x-[1px] px-6 text-center text-sm font-semibold sm:block'>
           {durationLabel}
         </div>
-        <div className='flex flex-row items-center pl-6 pr-2 text-sm text-gray-600 gap-3'>
+        <div className='flex flex-row items-center gap-3 pl-6 pr-2 text-sm text-gray-600'>
           <div className='hidden sm:block'>{guestLabel}</div>
-          <div className='p-2 rounded-full bg-yellow-600 text-white'>
+          <div className='rounded-full bg-yellow-600 p-2 text-white'>
             <BiSearch size={18} />
           </div>
         </div>

@@ -1,7 +1,7 @@
 // FavoritesClient.tsx
+import { Listing } from '@prisma/client'
 import React from 'react'
 import type { SafeUser } from '@/app/types'
-import { Listing } from '@prisma/client'
 
 interface FavoritesClientProps {
   listings: Listing[]

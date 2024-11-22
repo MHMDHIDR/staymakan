@@ -1,10 +1,8 @@
 // app/favorites/page.tsx
-import EmptyState from '@/app/components/EmptyState'
-import ClientOnly from '@/app/components/ClientOnly'
-
 import getCurrentUser from '@/app/actions/getCurrentUser'
 import getFavoriteListings from '@/app/actions/getFavoriteListings'
-
+import ClientOnly from '@/app/components/ClientOnly'
+import EmptyState from '@/app/components/EmptyState'
 import FavoritesClient from './FavoritesClient'
 
 const ListingPage = async () => {

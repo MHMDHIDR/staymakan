@@ -1,19 +1,17 @@
 'use client'
 
-import { useCallback, useState } from 'react'
-import { toast } from 'react-hot-toast'
 import { signIn } from 'next-auth/react'
-import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
-import { FcGoogle } from 'react-icons/fc'
 import { useRouter } from 'next/navigation'
-
-import useRegisterModal from '@/app/hooks/useRegisterModal'
+import { useCallback, useState } from 'react'
+import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
+import { toast } from 'react-hot-toast'
+import { FcGoogle } from 'react-icons/fc'
 import useLoginModal from '@/app/hooks/useLoginModal'
-
-import Modal from './Modal'
-import Input from '../inputs/Input'
-import Heading from '../Heading'
+import useRegisterModal from '@/app/hooks/useRegisterModal'
 import Button from '../Button'
+import Heading from '../Heading'
+import Input from '../inputs/Input'
+import Modal from './Modal'
 
 const LoginModal = () => {
   const router = useRouter()
@@ -82,7 +80,7 @@ const LoginModal = () => {
   )
 
   const footerContent = (
-    <div className='flex flex-col mt-3 gap-4'>
+    <div className='mt-3 flex flex-col gap-4'>
       <hr />
       <Button
         outline
@@ -90,7 +88,7 @@ const LoginModal = () => {
         icon={FcGoogle}
         onClick={() => signIn('google')}
       />
-      <div className='mt-4 font-light text-center text-neutral-500'>
+      <div className='mt-4 text-center font-light text-neutral-500'>
         <p>
           First time using StayMakan?{' '}
           <span

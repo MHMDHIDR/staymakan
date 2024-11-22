@@ -2,18 +2,16 @@
 
 import axios from 'axios'
 import { signIn } from 'next-auth/react'
-import { FcGoogle } from 'react-icons/fc'
 import { useCallback, useState } from 'react'
-import { toast } from 'react-hot-toast'
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
-
+import { toast } from 'react-hot-toast'
+import { FcGoogle } from 'react-icons/fc'
 import useLoginModal from '@/app/hooks/useLoginModal'
 import useRegisterModal from '@/app/hooks/useRegisterModal'
-
-import Modal from './Modal'
-import Input from '../inputs/Input'
-import Heading from '../Heading'
 import Button from '../Button'
+import Heading from '../Heading'
+import Input from '../inputs/Input'
+import Modal from './Modal'
 
 const RegisterModal = () => {
   const registerModal = useRegisterModal()
@@ -87,7 +85,7 @@ const RegisterModal = () => {
   )
 
   const footerContent = (
-    <div className='flex flex-col mt-3 gap-4'>
+    <div className='mt-3 flex flex-col gap-4'>
       <hr />
       <Button
         outline
@@ -95,13 +93,10 @@ const RegisterModal = () => {
         icon={FcGoogle}
         onClick={() => signIn('google')}
       />
-      <div className='mt-4 font-light text-center  text-neutral-500'>
+      <div className='mt-4 text-center font-light text-neutral-500'>
         <p>
           Already have an account?
-          <span
-            onClick={onToggle}
-            className='cursor-pointer  text-neutral-800 hover:underline'
-          >
+          <span onClick={onToggle} className='cursor-pointer text-neutral-800 hover:underline'>
             {' '}
             Log in
           </span>
